@@ -1,0 +1,15 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/**", "test/**", "execFiles", ".cache"],
+  "verbose": false,
+  "exec": "ts-node ./index.ts",
+  "events": {
+    "start": "",
+    "crash": "",
+    "exit": "",
+    "restart": ""
+  },
+  "ext": "js json ts tsx",
+  "watch": ["./**"],
+  "legacy-watch": false
+}

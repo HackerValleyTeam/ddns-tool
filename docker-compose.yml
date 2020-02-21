@@ -1,0 +1,19 @@
+
+version: '3.7'
+
+services:
+
+  dev_project:
+    image: node:latest
+    restart: always
+    working_dir: /home/node/app
+    volumes: 
+      - ./:/home/node/app
+    environment: 
+      - ALI_DNS_ID=LTAI4Fp6QKmAwLSHkrpuXyic
+      - ALI_DNS_SECRET=Za49ZT4mHtEP3pQ896jEtFHYAcrV5p
+      - ALI_DNS_ENDPOINT=https://alidns.aliyuncs.com
+      - ALI_DNS_API_VERSION=2015-01-09
+      - SUB_DOMAIN=api-hackerkeyboard-minipro-test
+      - DOMAIN=hackervalley.net
+    command: "npx nodemon ./index.ts"

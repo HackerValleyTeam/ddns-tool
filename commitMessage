@@ -1,0 +1,11 @@
+feat($class):Initial project and finished baisc feature #1 
+
+Run a Cron-Job every 5 minutes 
+Check public IP address
+Dynamic update the Aliyun domain name service (DNS) record
+Write some basic unit test case
+Update the ReadMe documentation
+Run program on local mac and all feature is running well
+
+Closes #1
+Breaks null

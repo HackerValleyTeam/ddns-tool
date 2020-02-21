@@ -1,0 +1,14 @@
+{
+  "extends":  "@istanbuljs/nyc-config-typescript",
+  "require": ["ts-node/register"],
+  "check-coverage": true,
+  "extension": [".ts", ".tsx"],
+  "exclude": ["**/*.test.ts", "**/*.d.ts", "**/*.js", "test/**"],
+  "sourceMap": true,
+  "instrument": true,
+  "hook-require": true,
+  "branches": 0,
+  "lines": 0,
+  "functions": 0,
+  "statements": 0
+}
