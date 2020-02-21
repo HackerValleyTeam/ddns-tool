@@ -31,11 +31,13 @@
     - 在路由器上给你的电脑指定一个固定IP，如果你的路由器连接在光猫上同时需要给你的路由器指定一个固定IP。[查看示例](https://jingyan.baidu.com/article/647f01151db5677f2148a8de.html)（为下一步DMZ和端口映射设置作准备）
     - 在路由器和光猫上设置好DMZ或端口映射[查看示例](https://jingyan.baidu.com/article/fdbd42779f7136b89e3f48e0.html)
   - 本机安装有docker-compose [查看文档](https://docs.docker.com/compose/install/)
+  - 本机安装有nodejs和npm，建议使用最新稳定版本 [查看文档](https://nodejs.org/en/)
 
 ------
 
 ## 安装和开始使用
   - 克隆本仓库 `git clone <仓库地址>`
+  - 执行 `npm install`
   - 将 `example-docker-compose.yml` 重命名为 `docker-compose.yml`
   - 设置 `docker-compose.yml` 文件的环境变量<>包裹的部分（一定不能留尖括号和空格），没有的话请参见使用前准备
   ```
