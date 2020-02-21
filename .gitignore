@@ -106,5 +106,5 @@ dist
 # TernJS port file
 .tern-port
 
-# Real docker compose
-docker-compose.yml
+# Real config file
+config.ts

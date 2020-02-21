@@ -1,28 +1,42 @@
 import Core from '@alicloud/pop-core'; // 阿里云api调用SDK aliyun core SDK
 import req from 'request-promise'; // 用于对外请求 To request API
 import { print, styledText } from '../printer'; // 用于打印信息 To print information to process.write
+import config from '../../config';
+
+const {
+  accessKeyId,
+  accessKeySecret,
+  endpoint,
+  apiVersion,
+  subDomain,
+  domain,
+} = config;
 
 const client = new Core({ // 实例化阿里云客户端 a client instance from the Aliyun Croe
-  accessKeyId: String(process.env.ALI_DNS_ID), // accessKeyID
-  accessKeySecret: String(process.env.ALI_DNS_SECRET), // accessKeySecret
-  endpoint: String(process.env.ALI_DNS_ENDPOINT), // default API url
-  apiVersion: String(process.env.ALI_DNS_API_VERSION), // default API version
+  accessKeyId, // accessKeyID
+  accessKeySecret, // accessKeySecret
+  endpoint, // default API url
+  apiVersion, // default API version
 });
 
 class DNSUpdater {
   private constructor(
-    private subDomain: string, // 子域名 Subdomain
-    private domain: string, // 域名 Domain
+    SubDomain: string, // 子域名 Subdomain
+    Domain: string, // 域名 Domain
   ) {
     this.client = client;
-    this.subDomain = subDomain;
-    this.domain = domain;
+    this.subDomain = SubDomain;
+    this.domain = Domain;
     this.recordID = ''; // 域名解析记录的唯一ID Distinct domain name record ID
     this.ip = '';
 
     this.getRecordID = this.getRecordID.bind(this);
     this.update = this.update.bind(this);
   }
+
+  private subDomain: string
+
+  private domain: string
 
   private recordID: string
 
@@ -104,7 +118,7 @@ class DNSUpdater {
   public static async run():Promise<void> {
     if (!this.instance) { // 如果没有实例化过 If it's never been instantiated
       // 实例化 intantiate
-      this.instance = new DNSUpdater(String(process.env.SUB_DOMAIN), String(process.env.DOMAIN));
+      this.instance = new DNSUpdater(subDomain, domain);
       try {
         const result = await this.instance.getRecordID();
         const { recordID, ip } = result;

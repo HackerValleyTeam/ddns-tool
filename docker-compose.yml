@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+
+  dev_project:
+    image: node:latest
+    restart: always
+    working_dir: /home/node/app
+    volumes: 
+      - ./:/home/node/app
+    command: "npx nodemon ./index.ts"

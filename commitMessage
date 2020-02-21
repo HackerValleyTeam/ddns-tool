@@ -1,6 +1,11 @@
-update($npm):update license
+update($initial):update install and config and run method
 
-update license
+update use config.ts config project
+use npx tsc & pkgto initial project
+use binary file run project
+I test it on mac, and It can run well
+update .gitignore
+update the ReadMe file
 
 Closes 
-Breaks null
+Breaks ./docker-compose.yml
